@@ -1,6 +1,6 @@
 chrome.browserAction.onClicked.addListener(async function(tab) {
     let { title, url } = tab;
-    let webhookURL = '';
+    let webhookURL = 'YOUR WEB HOOK HERE';
     if(!url.includes('youtube.com/watch?')) return;
     await fetch(webhookURL, {
         method: 'post',
