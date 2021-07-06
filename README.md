@@ -1,5 +1,5 @@
 # 💕 share-youtube 💕
-A chrome extention that integrates with discord webhooks to share youtube video's with friends or loved ones 💕
+A chrome extension that integrates with discord webhooks to share youtube video's with friends or loved ones 💕
 
 
 ### How to?
