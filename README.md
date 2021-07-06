@@ -4,7 +4,7 @@ A chrome extention that integrates with discord webhooks to share youtube video'
 
 ### How to?
 
-1. Download the files from github
+1. [Download](https://github.com/Nidrux/share-youtube/releases/tag/1.0.0) the files from github
 2. [Create a discord webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
 3. Copy the webhook url and paste it the webhook.js file
 4. Save everything and add it to your chrome extentions! 
