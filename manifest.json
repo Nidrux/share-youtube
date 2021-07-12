@@ -6,7 +6,12 @@
     "content_scripts": [
         {
           "matches": ["https://www.youtube.com/*"],
-          "js": ["script.js"],
+          "js": [
+              "script.js",
+              "components/svg.js",
+              "components/pop-ups/frame.js",
+              "components/pop-ups/reset.js"
+            ],
           "run_at":"document_end"
         }
     ],
