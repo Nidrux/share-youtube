@@ -10,7 +10,10 @@
               "script.js",
               "components/svg.js",
               "components/pop-ups/frame.js",
-              "components/pop-ups/reset.js"
+              "components/pop-ups/hooks.js"
+            ],
+            "css": [
+                "components/css/index.css"
             ],
           "run_at":"document_end"
         }

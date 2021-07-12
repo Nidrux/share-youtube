@@ -1,0 +1,23 @@
+:root {
+    --prim: #3059e3;
+    --hover: #262dbd;
+    --text: #909090;
+    --bg: #181818;
+    --bg-lighter: #222222;
+    --bg-darker: #0f0f0f;
+}
+#dsw-share-yt-popup-main h3 {
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+#dsw-share-yt-input-wrapper input {
+    padding: 2% 1em;
+    font-size: 1em;
+    outline: none;
+    background-color: var(--bg-darker);
+    color: var(--text);
+    border: none;
+    width: 80%;
+}

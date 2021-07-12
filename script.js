@@ -3,11 +3,20 @@ let {prim, hover} = {
   prim: '#3059e3',
   hover: '#262dbd'
 }
-function sendToWebhook(webhook, url) {
-  chrome.runtime.sendMessage({webhookURL: webhook, youtube: url}, function(response) {
-    console.log(response.farewell);
+function sendToWebhook(webhooks, url) {
+  webhooks.forEach(hook => {
+    chrome.runtime.sendMessage({webhookURL: hook, youtube: url}, function(response) {
+      console.log(response.farewell);
+    });
   });
 }
+chrome.storage.sync.get('hooks', (result) => {
+  if(!result.hooks) {
+    chrome.storage.sync.set({hooks: []});
+  } else {
+    return;
+  }
+});
 window.addEventListener('load',  async () => {
   function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
@@ -37,26 +46,18 @@ window.addEventListener('load',  async () => {
                   button.style.cursor = 'context-menu';
               })
               button.addEventListener('click', (e) => {
-                chrome.storage.sync.get('dsWebhook', (result) => {
-                  if(!result.dsWebhook) {
-                    let prompt = window.prompt('Please fill in your discord webhook');
-                    console.log(prompt)
-                    let check = prompt.indexOf("https://discordapp.com/api/webhooks/");
-                    console.log(check)
-                    if(check >= -1) {
-                      chrome.storage.sync.set({dsWebhook: prompt}, () => console.log("%cWebhook added", 'color: white; font-weight: bold; background-color: black;'))
-                      sendToWebhook(prompt);
-                    } else {
-                      alert('This is not a valid webhook! Try again.')
-                    }
+                chrome.storage.sync.get('hooks', (result) => {
+                  console.log(result.hooks);
+                  if(result.hooks.length <= 0) {
+                    addHook(document, chrome);
                   } else {
                     let url = window.location.href;
-                    sendToWebhook(result.dsWebhook, url);
+                    sendToWebhook(result.hooks, url);
                   }
                 })
               })
               button.addEventListener('contextmenu', (e) => {
-                popUpReset(document, chrome, prim);
+                popUpMain(document, chrome, prim);
                 e.preventDefault();
               })
           } catch (err) {
