@@ -1,8 +1,13 @@
+<div align="center">
+<img src="https://github.com/Nidrux/share-youtube/blob/main/icons/icon-128.png">
+  
 # 💕 share-youtube 💕
 A chrome extension that integrates with discord webhooks to share youtube video's with friends or loved ones 💕
 
-![](https://img.shields.io/github/repo-size/Nidrux/share-youtube)
+ ![](https://img.shields.io/github/repo-size/Nidrux/share-youtube)
 ![](https://img.shields.io/discord/833728729582010439)
+  
+</div>
 
 ### How to?
 
