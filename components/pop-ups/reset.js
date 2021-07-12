@@ -6,27 +6,24 @@ globalThis.popUpReset = async (document, chrome, prim) => {
     await chrome.storage.sync.get(['dsWebhook'], (res) => {
         let webhook = res.dsWebhook;
         console.log(webhook)
-        if(webhook) {
-            a.setAttribute('data-webhook', webhook)
-        } else {
-            a.setAttribute('data-webhook', 'empty')
-        }
+        webhook ? a.innerText = 'Click to view' : a.innerText = 'No webhook provided'
+        a.addEventListener('click', () => {
+            if(!webhook) return;
+            window.open(webhook, '_blank');
+        })
+        a.addEventListener('mouseover', (e) => {
+            a.style.cursor = 'pointer';
+        });
+        a.addEventListener('mouseout', (e) => {
+            a.style.cursor = 'context-menu';
+        });
+
     });
     p.innerText = 'Current webhook: ';
     p.style.color = '#909090';
     p.style.fontWeight = 'bold';
     p.appendChild(a);
     main.appendChild(p);
-
-    if(a.dataset.webhook === 'empty') {
-        a.innerText = 'No webhook has been provided'
-    } else {
-        a.innerText = 'Click to view';
-        a.setAttribute('href', a.dataset.webhook);
-        a.setAttribute('target', '_blank');
-    }
-
-
     let div = document.createElement('div');
     let trash = document.createElement('a');
     trash.innerHTML = svgTrash(prim);

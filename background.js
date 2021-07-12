@@ -1,9 +1,9 @@
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     console.log(request);
     if(!request) return;
+    if(!request.webhookURL) return;
     let yt = request.youtube;
     let webhookURL = request.webhookURL;
-    if(yt.includes('youtube.com/watch?') === false) return;
     await fetch(webhookURL, {
         method: 'post',
         headers: {
