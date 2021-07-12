@@ -1,20 +1,17 @@
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-    console.log(request)
-    console.log(sender)
-
-    let { url } = sender;
-    let webhookURL = request.webhookURL;
-    if(!url.includes('youtube.com/watch?')) return;
+    console.log(request);
+    if(!request) return;
+    if(!request.webhookURL) return;
+    let yt = request.youtube;
+    let webhookURL = request.webhookURL.webhook;
     await fetch(webhookURL, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            content: `${url}`
+            content: `${yt}`
         })
-    })  
-
-    sendResponse({farewell: 'succes'})
-    }
-);
+    });
+    sendResponse({farewell: 'succes'});
+});
