@@ -5,6 +5,7 @@
     --bg: #181818;
     --bg-lighter: #222222;
     --bg-darker: #0f0f0f;
+    --transition: all 300ms ease-in-out;
 }
 #dsw-share-yt-popup-main h3 {
     text-transform: uppercase;
@@ -12,7 +13,21 @@
     font-weight: bold;
     margin-bottom: 2%;
 }
-#dsw-share-yt-input-wrapper input {
+#dsw-share-yt-popup-main ul {
+    list-style: none;
+    margin-bottom: 2%;
+}
+
+#dsw-share-yt-popup-main ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+#dsw-share-yt-popup-main p {
+    color: var(--text);
+}
+#dsw-share-yt-input-wrapper input[type="text"] {
     padding: 2% 1em;
     font-size: 1em;
     outline: none;
@@ -20,4 +35,25 @@
     color: var(--text);
     border: none;
     width: 80%;
+    margin-bottom: 2%;
+}
+#dsw-share-yt-input-wrapper input[type="submit"] {
+    padding: 2% 1em;
+    font-size: 1em;
+    background-color: var(--prim);
+    color: var(--bg);
+    border: none;
+    margin-bottom: 2%;
+    transition: var(--transition);
+    cursor: pointer;
+}
+#dsw-share-yt-input-wrapper input[type="submit"]:hover {
+    background-color: var(--hover);
+    color: var(--text);
+}
+#dsw-share-yt-input-wrapper p {
+    color: var(--text);
+}
+.dsw-share-yt-trash {
+    z-index: 99;
 }

@@ -5,18 +5,11 @@ let {prim, hover} = {
 }
 function sendToWebhook(webhooks, url) {
   webhooks.forEach(hook => {
-    chrome.runtime.sendMessage({webhookURL: hook, youtube: url}, function(response) {
+    chrome.runtime.sendMessage({webhookURL: hook, youtube: url}, (response) => {
       console.log(response.farewell);
     });
   });
 }
-chrome.storage.sync.get('hooks', (result) => {
-  if(!result.hooks) {
-    chrome.storage.sync.set({hooks: []});
-  } else {
-    return;
-  }
-});
 window.addEventListener('load',  async () => {
   function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
@@ -46,15 +39,20 @@ window.addEventListener('load',  async () => {
                   button.style.cursor = 'context-menu';
               })
               button.addEventListener('click', (e) => {
-                chrome.storage.sync.get('hooks', (result) => {
-                  console.log(result.hooks);
-                  if(result.hooks.length <= 0) {
-                    addHook(document, chrome);
-                  } else {
-                    let url = window.location.href;
-                    sendToWebhook(result.hooks, url);
-                  }
-                })
+               // ON CLICK
+               chrome.storage.sync.get('hooks', (results) => {
+                 if(!results.hooks || results.hooks.length <= 0) {
+                    chrome.storage.sync.set({hooks: []}, () => {
+                      console.log('hooks created');
+                    })
+                    return addHook(document, chrome);
+                 } else if( results.hooks.length <= 0 ){
+                    return addHook(document, chrome);
+                 } else {
+                  let url = window.location.href;
+                  sendToWebhook(results.hooks, url)
+                 }
+               })
               })
               button.addEventListener('contextmenu', (e) => {
                 popUpMain(document, chrome, prim);

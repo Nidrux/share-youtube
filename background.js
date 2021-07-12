@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     if(!request) return;
     if(!request.webhookURL) return;
     let yt = request.youtube;
-    let webhookURL = request.webhookURL;
+    let webhookURL = request.webhookURL.webhook;
     await fetch(webhookURL, {
         method: 'post',
         headers: {
@@ -12,7 +12,6 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         body: JSON.stringify({
             content: `${yt}`
         })
-    })  
-    sendResponse({farewell: 'succes'})
-    }
-);
+    });
+    sendResponse({farewell: 'succes'});
+});

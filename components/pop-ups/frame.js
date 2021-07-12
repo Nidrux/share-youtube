@@ -82,9 +82,10 @@ globalThis.popUpFrame = (document) => {
     wrapper.appendChild(div);
     document.body.appendChild(wrapper);
 }
-
-
 globalThis.clearFrame = (document) => {
     let div = document.getElementById('dsw-share-yt-popup-main');
     div.innerHTML = '';
+}
+globalThis.close = (document) => {
+    document.body.removeChild(document.getElementById('dsw-share-yt-wrapper'));
 }
