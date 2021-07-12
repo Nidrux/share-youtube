@@ -1,6 +1,8 @@
 # 💕 share-youtube 💕
 A chrome extension that integrates with discord webhooks to share youtube video's with friends or loved ones 💕
 
+![](https://img.shields.io/github/repo-size/Nidrux/share-youtube)
+![](https://img.shields.io/discord/833728729582010439)
 
 ### How to?
 
@@ -14,6 +16,14 @@ A chrome extension that integrates with discord webhooks to share youtube video'
 2. Enable the developer mode on (Top right of the browser)
 3. Click on the load unpacked icon (top left) and upload the extension directory that you have created.
 
+### How to get started?
 
+When clicking the new icon that has been added underneath the video you'll be prompted with this pop-up. Fill in your discord webhook and close the pop-up!
+Now when you left click the icon the youtube video you're currently watching will be posted to the given webhook. 
 
-![](https://img.shields.io/github/repo-size/Nidrux/share-youtube)
+![](https://i.imgur.com/1fi3HJT.png)
+
+Want more webhooks? Right click to icon to manage your webhooks! Adding or removing webhooks can be done here!
+
+![](https://i.imgur.com/YFhaKb8.png)
+
