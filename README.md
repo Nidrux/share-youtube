@@ -28,7 +28,7 @@ Now when you left click the icon the youtube video you're currently watching wil
 
 ![](https://i.imgur.com/1fi3HJT.png)
 
-Want more webhooks? Right click to icon to manage your webhooks! Adding or removing webhooks can be done here!
+Want more webhooks? Right click the icon to manage your webhooks! Adding or removing webhooks can be done here!
 
 ![](https://i.imgur.com/YFhaKb8.png)
 
