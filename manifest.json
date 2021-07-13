@@ -2,7 +2,7 @@
     "name": "Share youtube with discord",
     "version": "1.0",
     "description": "❤️ Share video's with friends or loved ones :)",
-    "permissions": ["activeTab","storage", "tabs"],
+    "permissions": ["storage"],
     "content_scripts": [
         {
           "matches": ["https://www.youtube.com/*"],
