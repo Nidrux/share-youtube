@@ -12,10 +12,6 @@ globalThis.popUpFrame = (document) => {
     wrapper.style.width = '100%';
     wrapper.style.height = '100vh';
     wrapper.style.zIndex = '100000000000000000'
-
-    wrapper.addEventListener('click', () => {
-        document.body.removeChild(document.getElementById('dsw-share-yt-wrapper'));
-    })
     /* 
     POP-UP FRAME
     */
