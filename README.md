@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/Nidrux/share-youtube/blob/main/icons/icon-128.png">
+<img src="https://i.imgur.com/0ZoMMlE.png">
   
 # 💕 share-youtube 💕
 A chrome extension that integrates with discord webhooks to share youtube video's with friends or loved ones 💕
