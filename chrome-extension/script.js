@@ -49,8 +49,8 @@ window.addEventListener('load',  async () => {
                  } else if( results.hooks.length <= 0 ){
                     return addHook(document, chrome);
                  } else {
-                  let url = window.location.href;
-                  sendToWebhook(results.hooks, url)
+                  let url = (new URL(window.location.href)).searchParams;
+                  sendToWebhook(results.hooks, `https://youtu.be/${url.get('v')}`)
                  }
                })
               })
